@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import "./App.css";
+import React, { useState, useEffect } from 'react'
+import "./App.css"
 import ToDo from "./components/ToDo"
-import TodoForm from "./components/TodoForm";
+import TodoForm from "./components/TodoForm"
 
 
 function App() {
 
   const [todoPending, setTodoPending] = useState(0)
-  const [todos, setTodos] = useState([
-  
-  ])
+  const [todos, setTodos] = useState([])
   
   useEffect(() => { 
     setTodoPending(todos.filter(todos => !todos.completed).length) 
   }, [todos])
   
   const addTodo = text => {
-    const newTodos = [...todos, { text }];
+    const newTodos = [...todos, { text }]
     setTodos(newTodos);
-  };
+  }
 
   const completeTodo = index => {
-    const newTodos = [...todos];
+    const newTodos = [...todos]
     newTodos[index].isCompleted = true;
-    setTodos(newTodos);
-  };
+    setTodos(newTodos)
+  }
 
   const removeTodo = index => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  };
+    const newTodos = [...todos]
+    newTodos.splice(index, 1)
+    setTodos(newTodos)
+  }
   
   return(    
     <div className="app">  
@@ -53,4 +51,4 @@ function App() {
   ) 
 }
 
-export default App;
+export default App
