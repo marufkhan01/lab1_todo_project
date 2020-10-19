@@ -7,11 +7,16 @@ import TodoForm from "./components/TodoForm"
 function App() {
 
   const [todoPending, setTodoPending] = useState(0)
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([
+    {
+      text: "React TODO Project",
+      isCompleted: false
+    }
+  ])
   
   useEffect(() => { 
     setTodoPending(todos.filter(todos => !todos.completed).length) 
-  }, [todos])
+  },[todos])
   
   const addTodo = text => {
     const newTodos = [...todos, { text }]
@@ -44,7 +49,7 @@ function App() {
             />
           ))}
           <div className="create-todo">
-            <TodoForm addTodo={addTodo} />
+          <TodoForm addTodo={addTodo} />
           </div>
         </div>     
     </div>
