@@ -7,9 +7,10 @@ import TodoForm from "./components/TodoForm"
 function App() {
 
   const [todoPending, setTodoPending] = useState(0)
+
   const [todos, setTodos] = useState([
     {
-      text: "React TODO Project",
+      text: "React ToDo Project",
       isCompleted: false
     }
   ])
