@@ -1,5 +1,11 @@
 
 
 ### Lab1 
+
 ### Todo Project
-### Using React Hook
+
+### Create Project: npx create-react-app
+
+### Using React Hook (# useState # useEffect)
+
+### project Run: yarn start
